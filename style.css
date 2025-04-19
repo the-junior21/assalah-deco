@@ -44,7 +44,7 @@ body{
   padding: 2%; /* Creates breathing room */
 }
 .header-content{
-    margin: 0;
+  
     padding: 0;
     font-family: "poppins", sans-serif;
     box-sizing: border-box;
@@ -55,6 +55,7 @@ body{
     width: 100%;
     padding: 0.5rem;
     position: fixed;
+    top:0;
     background-color: #94918e;
     margin-bottom: 5rem;
   }
@@ -228,3 +229,80 @@ color: #6a4100;
   color: #777;
   font-size: 14px;
 }
+
+.slider-container {
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+  margin-top: 0%;
+  margin-bottom:-20%
+}
+
+.slider-track {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+  width: fit-content;
+  margin-top:16%;
+}
+
+.slider-track img {
+  width: 100vw; /* 1 full screen width per image */
+  height: auto;
+  flex-shrink: 0;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+.slider-container {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  margin-top: 0%;
+}
+
+.slider-track {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+  width: fit-content;
+}
+
+.slider-track img {
+  width: 100vw;
+  height: auto;
+  flex-shrink: 0;
+  object-fit: cover;
+  filter: brightness(80%);
+}
+
+  .slider-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: rgba(255, 255, 255, 0.5); /* semi-transparent white */
+    z-index: 10;
+    padding: 20px;
+    animation: fadeIn 2s ease;
+    background-color: rgba(0, 0, 0, 0.3); /* soft dark background */
+    border-radius: 12px;
+  }
+   /* soft dark background */
+
+
+.slider-text h1 {
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin-bottom: 10px;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.6);
+}
+
+.slider-text p {
+  font-size: 1.2rem;
+  text-shadow: 0 2px 6px rgba(0, 0, 0, 0.5);
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translate(-50%, -60%); }
+  to { opacity: 1; transform: translate(-50%, -50%); }
+}
+
+

@@ -21,6 +21,67 @@ console.log(listItems); // Should show 6 elements
   })
 });*/
 
+/*
+
+const images = [
+  "decoration plafond/WhatsApp Image 2025-04-03 at 02.32.20(1).jpeg",
+  "decoration plafond/WhatsApp Image 2025-04-03 at 02.32.20.jpeg",
+  "decoration plafond/WhatsApp Image 2025-04-03 at 02.51.19(1).jpeg",
+  "decoration plafond/WhatsApp Image 2025-04-03 at 02.51.19.jpeg",
+  "decoration plafond/WhatsApp Image 2025-04-03 at 02.51.20(1).jpeg",
+  "decoration plafond/WhatsApp Image 2025-04-03 at 02.51.20.jpeg",
+  "decoration plafond/WhatsApp Image 2025-04-03 at 03.05.43.jpeg"
+];
+
+let currentIndex = 0;
+const slider = document.querySelector("#image-slider img");
+
+function showNextImage() {
+  // Fade out
+  slider.style.opacity = 0;
+
+  setTimeout(() => {
+    // Change image source
+    currentIndex = (currentIndex + 1) % images.length;
+    slider.src = images[currentIndex];
+
+    // Fade in
+    slider.style.opacity = 1;
+  }, 500); // match the transition duration in CSS
+}
+
+// Start the slideshow
+setInterval(showNextImage, 5000);
+*/
+const images = [
+  "decoration plafond/WhatsApp Image 2025-04-03 at 02.32.20(1).jpeg",
+  "decoration plafond/WhatsApp Image 2025-04-03 at 02.32.20.jpeg",
+  "decoration plafond/WhatsApp Image 2025-04-03 at 02.51.19(1).jpeg",
+  "decoration plafond/WhatsApp Image 2025-04-03 at 02.51.19.jpeg",
+  "decoration plafond/WhatsApp Image 2025-04-03 at 02.51.20(1).jpeg",
+  "decoration plafond/WhatsApp Image 2025-04-03 at 02.51.20.jpeg",
+  "decoration plafond/WhatsApp Image 2025-04-03 at 03.05.43.jpeg"
+];
+
+const sliderTrack = document.getElementById("slider-track");
+
+// Inject images into track
+images.forEach(src => {
+  const img = document.createElement("img");
+  img.src = src;
+  sliderTrack.appendChild(img);
+});
+
+let currentIndex = 0;
+
+function slideToNext() {
+  currentIndex = (currentIndex + 1) % images.length;
+  sliderTrack.style.transform = `translateX(-${currentIndex * 100}vw)`;
+}
+
+// Start auto-slide
+setInterval(slideToNext, 5000);
+
 
 
 
