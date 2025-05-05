@@ -4,7 +4,7 @@ let togg = false;
 burBtn.addEventListener('click', ()=>{
   togg = !togg
   if(togg){
-    navLis.style.right = '0';
+    navLis.style.right = '0px';
     console.log("now show me")
     }else{
       navLis.style.right = '-500px';
@@ -82,6 +82,33 @@ function slideToNext() {
 // Start auto-slide
 setInterval(slideToNext, 5000);
 
+const container = document.querySelector('.ele-images-container'); // Create a container for the images
+const esection = document.querySelector('.emain'); // Create a container for the images
+const emain = document.querySelector('.esection'); // Create a container for the images
+/*
+for (let i = 1; i <= 10; i++) {
+  const img = document.createElement('img');
+  img.src = `ele/ele${i}.jpeg`;
+  img.alt = `Image ${i}`; // Optional: Add alt text
+  container.appendChild(img);
+}
+esection.appendChild(container)
+emain.appendChild(esection)*/
+
+// Append the container to the body
+const elements = document.querySelectorAll('.two-col, .three-col');
+
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('show');
+    }
+  });
+}, {
+  threshold: 0.3 // Adjust this if you want it to appear earlier or later
+});
+
+elements.forEach(el => observer.observe(el));
 
 
 
