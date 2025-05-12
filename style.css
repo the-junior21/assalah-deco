@@ -1,20 +1,21 @@
-@import url('https://fonts.googleapis.com/css2?family=Winky+Rough:wght@400..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Edu+QLD+Beginner:wght@400..700&family=Protest+Riot&family=Winky+Rough:ital,wght@0,300..900;1,300..900&display=swap');
 * {
   margin: 0;
   padding: 0;
   font-family: "poppins", sans-serif;
   box-sizing: border-box;
 }
+.site-name {
+  font-family: "Protest Riot", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+
 body{
 background: linear-gradient(to right, rgb(187, 187, 187) 0%, #f5f5f5 50%, rgb(187, 187, 187) 100%);
 }
-.site-name {
-  font-family: "Winky Rough", cursive;
-  font-weight: 600; /* Semi-bold (400-700 range) */
-  font-size: clamp(1.5rem, 6vw,2.5rem); /* Adjust size as needed */
-  color: #333; /* Or your preferred color */
-  letter-spacing: 1px; /* Optional: improves handwritten feel */
-}
+
 .logo-container{
   display: inline-block;
   position: relative;
@@ -485,4 +486,100 @@ color: #181818;
 
 
 
+@media (min-width: 1024px) {
+  body {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+    font-size: 18px; /* Slightly bigger text for PC */
+  }
 
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .navigation {
+    display: flex;
+    gap: 2rem;
+  }
+
+  .main-content {
+    display: flex;
+    flex-direction: row;
+    gap: 3rem;
+  }
+
+  .section {
+    flex: 1;
+    padding: 2rem;
+    background: #f9f9f9;
+    border-radius: 10px;
+  }
+
+  .images-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    justify-content: center;
+  }
+
+  .images-container img {
+    width: 300px;
+    height: auto;
+    border-radius: 8px;
+  }
+
+  .two-col, .three-col {
+    display: grid;
+    gap: 2rem;
+  }
+
+  .two-col {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .three-col {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  footer {
+    margin-top: 5rem;
+    padding: 2rem;
+    text-align: center;
+    background: #eee;
+    font-size: 16px;
+  }
+}
+.mobile-nav .li {
+  opacity: 0;
+  transform: translateX(-500%); /* Start off-screen to the left */
+  animation: slideIn 0.5s ease-out forwards;
+  animation-delay: var(--delay); /* Delay for each item */
+}
+
+/* Keyframes to animate the items sliding in */
+@keyframes slideIn {
+  to {
+    opacity: 1;
+    transform: translateX(0); /* Slide to the normal position */
+  }
+}
+
+/* Set the delay for each item */
+.mobile-nav .li:nth-child(1) {
+  --delay: 0.1s;
+}
+.mobile-nav .li:nth-child(2) {
+  --delay: 0.2s;
+}
+.mobile-nav .li:nth-child(3) {
+  --delay: 0.3s;
+}
+.mobile-nav .li:nth-child(4) {
+  --delay: 0.4s;
+}
+.mobile-nav .li:nth-child(5) {
+  --delay: 0.5s;
+}
